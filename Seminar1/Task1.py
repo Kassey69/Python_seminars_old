@@ -7,8 +7,8 @@
 # 25, 5 -> да
 # 8,9 -> нет
 
-first = int(input('Введите первое число '))
-second = int(input('Введите второе число '))
+first = int(input('Введите первое число \n'))
+second = int(input('Введите второе число \n'))
 if (first * first == second):
     print(f'второе число {second} квадрат первое {first}')
 elif (first * first != second):

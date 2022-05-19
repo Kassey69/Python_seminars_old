@@ -15,4 +15,4 @@ if num >= 1 and num <= 5:
 elif num >= 6 and num <= 7:
     print('выходной')
 else:
-    print('Ввели некорректное число')
+    print('Ввели некорректное число')      

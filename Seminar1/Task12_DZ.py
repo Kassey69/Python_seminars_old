@@ -13,6 +13,6 @@ y1 = float(input('Введите координаты y1 \n'))
 y2 = float(input('Введите координаты y2 \n'))
 result = round(math.sqrt((x2-x1)**2+(y2-y1)**2), 2)
 print(result)
-print('{:.2f}'.format(result), sep='')
+# print('{:.2f}'.format(result), sep='')
 
 

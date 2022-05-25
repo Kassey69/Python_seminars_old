@@ -19,3 +19,4 @@ for i in range(len(text)): # len - возвращает количество э�
 print(' ' .join(text))
 
 # help (range)
+

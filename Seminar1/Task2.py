@@ -27,10 +27,29 @@
 '''
 
 
-max_num = int(input('Введите число '))
+# max_num = int(input('Введите число '))
+# for i in range(1,5):
+#     next_num = int(input(f'Введите {i+1} число '))
+#     if max_num < next_num:
+#        max_num = next_num 
+# print('Максимальное число ', max_num)
+
+
+
+
+
+
+       # Напишите программу, которая на вход принимает 5 чисел и находит максимальное из них.
+
+'''Примеры:
+
+# 1, 4, 8, 7, 5 -> 8
+# 78, 55, 36, 90, 2 -> 90'''
+
+
+max_num = int(input('Введите 1 число \n'))
 for i in range(1,5):
-    next_num = int(input(f'Введите {i+1} число '))
-    if max_num < next_num:
-       max_num = next_num 
-print('Максимальное число ', max_num)
-       
+    next_num = int(input(f'Введите {i+1} число \n'))
+    if next_num > max_num:
+        max_num = next_num
+        print (f'Максимальное число {max_num}')

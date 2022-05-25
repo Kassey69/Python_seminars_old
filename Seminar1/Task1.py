@@ -7,11 +7,21 @@
 # 25, 5 -> да
 # 8,9 -> нет
 
-first = int(input('Введите первое число \n'))
-second = int(input('Введите второе число \n'))
-if (first * first == second):
-    print(f'второе число {second} квадрат первое {first}')
-elif (first * first != second):
-    print(f'второе число {second} не квадрат первое {first}')
-else: # или просто else и то и то правильно
-    print(f'второе число {second} не квадрат первое {first}')
+# first = int(input('Введите первое число \n'))
+# second = int(input('Введите второе число \n'))
+# if (first * first == second):
+#     print(f'второе число {second} квадрат первое {first}')
+# elif (first * first != second):
+#     print(f'второе число {second} не квадрат первое {first}')
+# else: # или просто else и то и то правильно
+#     print(f'второе число {second} не квадрат первое {first}')
+
+
+
+
+a = int(input('Введите число \n') )
+b = int(input('Введите 2 число \n') )
+if a == b**2:
+    print (f' {a} является квадратом {b}')
+else:
+    print (f' {a} не являектся квадратом {b}')

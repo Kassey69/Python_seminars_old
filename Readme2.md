@@ -87,3 +87,36 @@ for i in 'ewr  - + sd': # побуквенная разбивка
 28
 53
 78
+
+
+весь курс тут:
+https://geekbrainspro.notion.site/d6a1f6af984348ebb67e004a33f77735 - сайт по курсу гигбрейнс
+
+весь курс тут:
+https://geekbrainspro.notion.site/d6a1f6af984348ebb67e004a33f77735 - сайт по курсу гигбрейнс
+
+весь курс тут:
+https://geekbrainspro.notion.site/d6a1f6af984348ebb67e004a33f77735 - сайт по курсу гигбрейнс
+
+весь курс тут:
+https://geekbrainspro.notion.site/d6a1f6af984348ebb67e004a33f77735 - сайт по курсу гигбрейнс
+
+
+
+
+
+colors = ['red', 'green', 'blue']
+data = open('file.txt', 'w') #путь к файлу и мод с которым будем работать 
+                            # a - дозапись, r - чтение, w - запись
+# data.writelines(colors) # разделителей не будет
+data.write('\nLINE 121\n')
+data.write('LINE 131\n')
+data.close()
+
+#exit() # позволяет не выполнять код который дальше прописан
+path = 'file.txt'
+data = open(path, 'r')
+for line in data:
+    print(line)
+data.close()
+exit()

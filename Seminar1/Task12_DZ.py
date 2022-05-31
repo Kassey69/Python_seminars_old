@@ -7,12 +7,10 @@
 # A (7,-5); B (1,-1) -> 7,21
 
 import math
-x1 = float(input('Введите координаты х1 \n'))
-x2 = float(input('Введите координаты х2 \n'))
-y1 = float(input('Введите координаты y1 \n'))
-y2 = float(input('Введите координаты y2 \n'))
-result = round(math.sqrt((x2-x1)**2+(y2-y1)**2), 2)
+Ax1 = float(input('Введите координаты Aх1 \n'))
+Ay1 = float(input('Введите координаты Ay1 \n'))
+Bx2 = float(input('Введите координаты Bx2 \n'))
+By2 = float(input('Введите координаты By2 \n'))
+result = round(math.sqrt((Bx2-Ax1)**2+(By2-Ay1)**2), 2)
 print(result)
 # print('{:.2f}'.format(result), sep='')
-
-

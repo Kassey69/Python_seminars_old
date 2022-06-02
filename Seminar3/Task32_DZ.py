@@ -16,9 +16,9 @@ print(list)
     #https://all-python.ru/osnovy/sluchajnoe-chislo.html - Реализации случайных чисел в Python
 list2 = []
 for i in list:
-    list2.append(round(i - int(i), 2))
+    list2.append(round(i - int(i), 2)) # избавляемся от целых чисел
 print(list2)
-max = round(i - int(i), 2)
+max = round(i - int(i), 2)  # делаем это чтоб максимум был без целых, а в минимумах это не нужно
 min = i
 result = 0
 for i in list2:

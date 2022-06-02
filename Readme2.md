@@ -120,3 +120,27 @@ for line in data:
     print(line)
 data.close()
 exit()
+
+# СЛОВАРИ - неупорядщоченные коллекции произвольных объектов с доступом по ключу
+
+distionary = {} #\ ставится если тяжело все описывать в рамках одной строки, это переноска на другую строку
+distionary = \
+    {
+         'up': '↑',
+         'left': '←',
+         'down': '↓',
+         'right': '→'
+    }
+#print(distionary) # { 'up': '↑','left': '←', 'down': '↓','right': '→'}
+#print(distionary['left'])
+# типы ключей могут отличаться
+
+# for k in distionary.keys(): # ключи
+for k in distionary.values(): # конкретные  значения
+    print(k)
+
+for v in distionary: # пробежимся по всем элементам нашего словаря
+    print(v)
+
+for v in distionary: 
+    print(distionary[v]) # получаем только значения

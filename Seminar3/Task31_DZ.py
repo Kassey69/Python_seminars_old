@@ -11,7 +11,7 @@
 import math
 import random
 
-n = random.randrange(2,10) #задает дандомное количесво чисел в диапазоне от 4 до 8
+n = random.randrange(2,10) #задает рандомное количесво чисел в диапазоне от 2 до 10
 list = []
 for i in range(n):
     list.append(random.randint(1, n+1)) # заполняет числа рандомными значениями
@@ -19,8 +19,11 @@ print(list)
 #list = [2, 3, 4, 5, 6]
 proizv = 0
 list2 = [] # создаем 2 список для произведение пар чисел из 1 списка
-for i in range(math.ceil(len(list)/2)): # https://docs.python.org/3/library/math.html
-                                # math.ceil(x) Возвращает потолок x, наименьшее целое число, большее или равное x
+for i in range(math.ceil(len(list)/2)): # https://docs.python.org/3/library/math.html  # len()	Возвращает длину строки
+  # math.ceil( x ) -- функция ceil() возвращает предельное значение х, т.е. наименьшее целое число не меньше, чем х.
+    # math.ceil(-32.22) :  -32
+    # math.ceil(100.34) :  101
+    # math.ceil(100.74) :  101
     proizv = list[i] * list[-1-i]
     print(f'{list[i]} * {list[-1-i]} = {proizv}')
     list2.append(proizv)

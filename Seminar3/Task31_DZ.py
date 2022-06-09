@@ -11,15 +11,19 @@
 import math
 import random
 
-n = random.randrange(2,10) #задает рандомное количесво чисел в диапазоне от 2 до 10
+# задает рандомное количесво чисел в диапазоне от 2 до 10
+n = random.randrange(2, 10)
 list = []
 for i in range(n):
-    list.append(random.randint(1, n+1)) # заполняет числа рандомными значениями
+    # заполняет числа рандомными значениями
+    list.append(random.randint(1, n+1))
 print(list)
 #list = [2, 3, 4, 5, 6]
+
 proizv = 0
-list2 = [] # создаем 2 список для произведение пар чисел из 1 списка
-for i in range(math.ceil(len(list)/2)): # https://docs.python.org/3/library/math.html  # len()	Возвращает длину строки
+list2 = []  # создаем 2 список для произведение пар чисел из 1 списка
+# https://docs.python.org/3/library/math.html  # len()	Возвращает длину строки
+for i in range(math.ceil(len(list)/2)):
   # math.ceil( x ) -- функция ceil() возвращает предельное значение х, т.е. наименьшее целое число не меньше, чем х.
     # math.ceil(-32.22) :  -32
     # math.ceil(100.34) :  101
@@ -30,3 +34,15 @@ for i in range(math.ceil(len(list)/2)): # https://docs.python.org/3/library/math
 print(list2)
 
 
+
+# 2 вариант решения
+# list = [2, 3, 4, 5, 6]
+result = []  # результирующий список
+left = 0  # левая сторона списка, начинаем с 1 элемента индекса списка, с нуля
+while left < len(list) / 2:  # пока левая часть меньше длины списка деленая на два
+    # правая часть это левая часть + 1 и умножить на -1
+    right = (left + 1) * -1
+    # в результирующий список добавляем произведение левой и правой части
+    result.append(list[left] * list[right])
+    left += 1  # увеличиваем левую часть на 1 пока не выйдем из цикла
+print(result)

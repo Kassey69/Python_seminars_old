@@ -1,5 +1,5 @@
 # Задача 3.
-# Задайте список из вещественных чисел. Напишите программу, 
+# Задайте список из вещественных чисел. Напишите программу,
 # которая найдёт разницу между максимальным и минимальным значением дробной части элемента.
 
 # Пример:
@@ -8,26 +8,47 @@
 
 import random
 
-n = random.randrange(2,10) #задает рандомное количесво чисел в диапазоне от 2 до 10
+# задает рандомное количесво чисел в диапазоне от 2 до 10
+n = random.randrange(2, 10)
 list = []
 for i in range(n):
-    list.append(round(random.uniform(0, 10),2))
+    list.append(round(random.uniform(0, 10), 2))
 print(list)
-    #https://all-python.ru/osnovy/sluchajnoe-chislo.html - Реализации случайных чисел в Python
-list2 = []
-for i in list:
-    list2.append(round(i - int(i), 2)) # избавляемся от целых чисел
-print(list2)
-max = round(i - int(i), 2)  # делаем это чтоб максимум был без целых, а в минимумах это не нужно
-min = i
-result = 0
-for i in list2:
-    if i > max:
-        max = i      
-    elif i < min:
-        min = i
-result = round((max - min),2)
-print (f'Максимальная дробная часть: {max}')
-print (f'Минимальное дробная часть: {min}')
-print(f'Разница: {max} - {min} = {result}')
-    
+# # list = [1.1, 1.2, 3.1, 5, 10.01]
+# # https://all-python.ru/osnovy/sluchajnoe-chislo.html - Реализации случайных чисел в Python
+# list2 = []
+# for i in list:
+#     list2.append(round(i - int(i), 2))  # избавляемся от целых чисел
+# print(list2)
+# # делаем это чтоб максимум был без целых, а в минимумах это не нужно
+# max = round(i - int(i), 2)
+# min = i
+# result = 0
+# for i in list2:
+#     if i > max:
+#         max = i
+#     elif i < min:
+#         min = i
+# result = round((max - min), 2)
+# print(f'Максимальная дробная часть: {max}')
+# print(f'Минимальное дробная часть: {min}')
+# print(f'Разница: {max} - {min} = {result}')
+
+
+'''2 вариант, упрощенный алгоритм'''
+
+
+# list = [1.1, 1.2, 3.1, 5, 10.01]
+list = [round((i - int(i)),2) for i in list]
+
+# # i*100) % 100 - элемент списка умнодаем на 100, откидываем дробную часть и
+# # получаем остаток от деления на 100, конкрентно дробную часть
+# # и проверяем чтоб она была больше нуля и ее записываем +  приводим к int значению
+# # в пайтон если мы приводим числа к int то лишний хвостик отбрасываем с дробью
+# и в конце за счет min и max , берем минимальное и максималдьное и выситаемся, вычислять их не нужно
+# в пайтоне минимум и максимум автоматом считается, но есть особые моменты
+print(f'Максимальная дробная часть: {max(list)}')
+print(f'Минимальное дробная часть: {min(list)}')
+print(f'Разница: {max(list)} - {min(list)} = {round((max(list) - min(list)),2)}')
+print(round((max(list) - min(list)),2))
+

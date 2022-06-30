@@ -11,6 +11,82 @@ import random
 # https://stackoverflow.com/questions/31374721/what-is-the-logic-for-x-y-y-x-to-swap-the-values
 
 
+# Разберём пример
+# Найдём НОД(8,16)
+# Разложим числа
+# 8 = 2 × 2 × 2
+# 16 = 2 × 2 × 2 × 2
+# Подчеркнём общие множители
+# 8 = 2 × 2 × 2
+# 16 = 2 × 2 × 2 × 2
+# Перемножим общие множители
+# НОД(8, 16) = 2 × 2 × 2 = 8
+
+# a = 5 и b = 6.
+# тогда в выражении a, b = b, a + b правая часть будет вычисляться первой, так что с правой стороны 
+# b = 6 и a + b = 5 + 6, то есть выражение (a + b) оценивается как 11. Теперь, 
+# поскольку правая сторона была оценена, она будет назначена левой стороне. 
+# Итак, a присваивается 6, а b присваивается 11.   
+
+'''Алгоритм Евклида - https://proproprogs.ru/python_base/algoritm-evklida - a,b = b, a % b'''
+
+import random
+a, b, *_= map(int, input().split()) # ввод значений вручную 
+#*_ - мусорная переменная. после этого можно вводить сколько угодно
+# map применит в каждому итератору функцию int и запишет введенные значения через пробел
+a = random.randint(-10,90)
+if a == 0:
+    a = random.randint(1,90) # если попали рандом то заново рандом пускаем, но уже без 0
+b = random.randint(-10,90)
+print(f'Вводим данные: {a , b}')
+if (a <= 0) or (b <= 0):
+    print("данные некорректны, ничего не гарантирую")  # проверяем корректность введенных данных
+def nod(a, b):  
+    if a < b:
+        a,b = b,a # меняем местами значения аргументов
+        while b:
+            a,b = b, a % b  
+    return a
+print(f'НОД: {nod(a, b)}')
+
+def nok(a, b):   
+    nokk = (a * b) // (nod(a, b)) # // делится без остатка, с одной чертой будет 166.0
+    print(f'НОК: {nokk}')
+    return nokk
+nok(a, b)
+
+
+print(" ")
+
+'''Вариент 2'''
+a = random.randint(1,90)
+b = random.randint(1,90)
+ # проверяем корректность введенных данных
+if (a <= 0) or (b <= 0):
+    print("данные некорректны, ничего не гарантирую")
+print(f'Вводим данные: {a , b}')
+def nod(a, b):
+    if a > b:  # выясняем какой аргумент больше из двух
+        temp = b 
+    else: 
+        temp = a      
+    # return max(i for i in range(1, temp + 1) if (( a % i == 0) and (b % i == 0)))
+    for i in range(1, temp + 1):
+        if (a % i == 0) and (b % i == 0):
+            nodd = i  
+    print(f'НОД: {nodd}') 
+    return nodd
+     # сдесь значение метода max очень помогло. мы выбираем наибольший делитель на который делят оба числа  
+
+def nok(a, b):   
+    nokk = (a * b) // (nod(a, b)) # // делится без остатка, с одной чертой будет 166.0
+    print(f'НОК: {nokk}')
+    return nokk
+nok(a, b)
+
+print(" ")
+
+'''Вариент 3'''
 a = random.randrange(-10, 90)
 b = random.randrange(-10, 90)
 print(a, b)
@@ -41,7 +117,9 @@ g = 6
 if g % x and g % y
 12 % 4 and 12 % 6
 '''
+print(" ")
 
+'''Вариент 4'''
 def calculate_lcm(x , y):
     greater = x if x > y else y # если х больше чем у то мы меняем числа и получаем самое большое числа
     while True: # запускаем цикл где проверяем если большее число без остатка делится на х и на у то    
@@ -51,8 +129,8 @@ def calculate_lcm(x , y):
         greater += 1        # иначе увеличиваем большее число на 1
     return lcm
 
-print(calculate_lcm(6, 8))
-print(calculate_lcm(4, 6))
+print(calculate_lcm(5, 9))
+print(calculate_lcm(5, 9))
 
 
 

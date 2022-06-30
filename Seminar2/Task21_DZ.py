@@ -4,8 +4,9 @@
 
 # пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
-n = int(input('enter n \n'))
+# n = int(input('enter n \n'))
+n = 4
 factorial = 1
 for i in range(1, n+1):         #n+1  чтоб добавить вывод 4 числа, так как начали с 1
     factorial *= i
-    print(factorial, end=' ')
+    print(factorial, end=' ') # 1 2 6 24 

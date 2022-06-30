@@ -13,36 +13,73 @@ import random
 
 # задает рандомное количесво чисел в диапазоне от 2 до 10
 n = random.randrange(2, 10)
-list = []
+My_list = []
 for i in range(n):
     # заполняет числа рандомными значениями
-    list.append(random.randint(1, n+1))
-print(list)
+    My_list.append(random.randint(1, n+1))
+print(My_list)
 #list = [2, 3, 4, 5, 6]
 
 proizv = 0
-list2 = []  # создаем 2 список для произведение пар чисел из 1 списка
+My_list2 = []  # создаем 2 список для произведение пар чисел из 1 списка
 # https://docs.python.org/3/library/math.html  # len()	Возвращает длину строки
-for i in range(math.ceil(len(list)/2)):
+for i in range(math.ceil(len(My_list)/2)):
   # math.ceil( x ) -- функция ceil() возвращает предельное значение х, т.е. наименьшее целое число не меньше, чем х.
     # math.ceil(-32.22) :  -32
     # math.ceil(100.34) :  101
     # math.ceil(100.74) :  101
-    proizv = list[i] * list[-1-i]
-    print(f'{list[i]} * {list[-1-i]} = {proizv}')
-    list2.append(proizv)
-print(list2)
+    proizv = My_list[i] * My_list[-1-i]
+    print(f'{My_list[i]} * {My_list[-1-i]} = {proizv}')
+    My_list2.append(proizv)
+print(My_list2)
 
 
 
 # 2 вариант решения
-# list = [2, 3, 4, 5, 6]
+Mu_list = [2, 3, 4, 5, 6]
 result = []  # результирующий список
 left = 0  # левая сторона списка, начинаем с 1 элемента индекса списка, с нуля
-while left < len(list) / 2:  # пока левая часть меньше длины списка деленая на два
+while left < len(Mu_list) / 2:  # пока левая часть меньше длины списка деленая на два
     # правая часть это левая часть + 1 и умножить на -1
     right = (left + 1) * -1
     # в результирующий список добавляем произведение левой и правой части
-    result.append(list[left] * list[right])
+    result.append(Mu_list[left] * Mu_list[right])
+    print(f'{Mu_list[left]} * {Mu_list[right]} = {Mu_list[left] * Mu_list[right]}')
     left += 1  # увеличиваем левую часть на 1 пока не выйдем из цикла
-print(result)
+print(f'результат - {result}')
+
+
+# 3 вариант решения
+
+import math
+My_list = [2, 3, 4, 5, 6]
+print(My_list)
+def spisok(My_list):
+    for i in range(math.ceil(len(My_list)/2)):
+        result = My_list[i] * My_list[-1-i] # -1 это последний элемент -i показывает направление куда идти, следущий -2-i
+        print(f'{My_list[i]} * {My_list[-1-i]} = {result}')
+
+    return [My_list[i] * My_list[-1-i] for i in range(math.ceil(len(My_list)/2))]
+print(spisok(My_list))
+'''
+В Python модуль math содержит ряд математических операций, 
+которые можно легко выполнить с помощью модуля. math.ceil()функция 
+возвращает наименьшее целое значение, большее числа. Если число уже целое, возвращается то же самое число.
+При math.ceil()необходимости метод округляет число до ближайшего целого числа и возвращает результат.
+math.ceil(X) – округление до ближайшего большего числа.
+
+Я думаю в случае когда список делим на 2 части, а там может быть 5 ячеек а надо сделать 3 разделив на пполам 
+как будто их 6. и тут range(math.ceil(len(My_list) возвращает целые значения в большую сторону как всегда
+только это не запятые а из 5 сделать 3 числа, как будто там 6 чисел при ровном делении
+ это преследует цель умножения как в этом варианте чисел. то последнее число котрое останется одно умножит само на себя
+
+Встроенная функция Python len()возвращает длину заданной строки, массива, списка, кортежа, 
+словаря или любой другой итерации.
+
+
+Следующий код использует понимание списка для разделения целого числа на цифры в Python.
+num = 13579
+x = [int(a) for a in str(num)]
+print(x)
+'''
+

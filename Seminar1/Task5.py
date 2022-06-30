@@ -18,13 +18,20 @@
 
 num = int(input('Введите число:\n '))
 def n(num):
-    return (num % 5 == 0 or num % 10 == 0 or num % 15 == 0) and num % 30 !=0
-       # return (num % 5 == 0 or num % 10 == 0 or num % 15 == 0) and num % 30 !=0
+    return ((num % 5 == 0 and num % 10 == 0) or num % 15 == 0) and not num % 30 == 0
+       # return (num % 5 == 0 and num % 10 == 0 or num % 15 == 0) and num % 30 !=0
 print(n(num))
 
+# import random
+# num = random.randint(5,300)
+# print((num))
+# # num = int(input('Введите число:\n '))
+# def n(num):
+#     return ((num % 5 == 0 and num % 10 == 0) or num % 15 == 0) and not num % 30 == 0
+#        # return (num % 5 == 0 and num % 10 == 0 or num % 15 == 0) and num % 30 !=0
+# print(n(num))
 
 
-
-
+  
 
 

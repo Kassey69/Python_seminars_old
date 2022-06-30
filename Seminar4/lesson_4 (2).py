@@ -68,3 +68,21 @@
 #
 # print(calculate_lcm(6, 8))
 # print(calculate_lcm(4, 6))
+import random
+num = random.randint(4,7)
+# num = int(input())
+my_dict = {}
+for i in range(1, num + 1):
+# my_dict[1] = 3*1 + 1
+# my_dict[2] = 3*2 + 1
+# my_dict[3] = 3*3 + 1
+    my_dict[i] = 3*i + 1
+print(f' Получичтся: {my_dict}')
+
+import random
+# n = int(input('Введите натуральное число \n'))
+n = random.randint(4,7)
+my_dict = {} # создаем словарик
+for i in range(1, n+1): # тут записано что индекс элементов равен от 1 до n+1 потому что не с 0 а с 1
+    my_dict[i] = 3*i + 1 # 3 * 1 + 1 = 4; 3 * 2 + 1 = 7; 3 * 3 + 1 = 10; 3 * 4 + 1 = 13 
+print(my_dict)

@@ -8,7 +8,7 @@ class Counter:
     # что он принадлежит к группе методов перегрузки операторов. https://younglinux.info/oopython/init
     def __iter__(self):
         return self # объект итеракт возвращает самого себя
-        # и когжа цикл for вызывает __iter__ от последовательно начинает вызывать функцию __next__ 
+        # и когда цикл for вызывает __iter__ от последовательно начинает вызывать функцию __next__ 
         # у того что вернет нам функция __iter__
     def __next__(self):
         self.current += 1 # мы значение увекличсиваем на 1 и проверяем
@@ -19,11 +19,12 @@ class Counter:
 for i in Counter(1, 5):
     print(i)
 
-
+    # метод _itit__ это метод который вызывается при инициализации класса 
+    # и то что мы будем передавать внутрь класса мы можем сдесь прописать, в него, в инит
 class Range:
-    def __init__(self, high, low=None, step=None):
+    def __init__(self, high, low=None, step=None): # low=None - необязательный, high обязательный,step=None,self,
         self.current = low - step if low != 0 else 0 - step
-        self.high = high
+        self.high = high # ставим что self.high = high
         self.low = low if low is not None else 0
         self.step = step
 
@@ -44,18 +45,18 @@ i = Range(low=0, high=10, step=2).__iter__()
 while True:
     try:
         print(next(i))
-    except StopIteration as e:
+    except StopIteration as e: # (as - как) переводится
         print('error', e.args)
         break
 
 
 class Map:
-    def __init__(self, function, iter_obj):
+    def __init__(self, function, iter_obj): # мы принимаем функцию и объект
         self.function = function
-        self.iter_obj = iter_obj.__iter__()
+        self.iter_obj = iter_obj.__iter__() 
 
-    def __iter__(self):
-        return self
+    def __iter__(self): 
+        return self  # при итерацуи мы возвращаем
     
     def __next__(self):
         return self.function(next(self.iter_obj)) # мы применили функцию которую передали в class к следующему
@@ -63,6 +64,6 @@ class Map:
 
 l = [1,2,3,4]
 for i in Map(str,l):
-    print(i, type(i))
+    print(i, type(i)) # 1 <class 'str'> 2 <class 'str'> 3 <class 'str'> 4 <class 'str'>
 
-print(list(Map(str,l))) # мы применили функцию которую передали в class
+print(list(Map(str,l))) # мы применили функцию которую передали в class ['1', '2', '3', '4']

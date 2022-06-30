@@ -11,7 +11,7 @@ data = open('e:/Programming/Visual_Studio_Code/Python_seminars/Seminar3/file.txt
 data.writelines(pos)
 data.close
 
-N = int(input('Введите число\n'))
+N = random.randint(1, 5)
 spisok = []
 for i in range(N):
     spisok.append(random.randint(-N, N+1)) 

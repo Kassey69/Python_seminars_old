@@ -14,17 +14,43 @@
 def bbp(n): # сделали функцию которая считает число pi по одной из формул, формулы произвольно взяты
     # формулы отсюда взяты http://www.swsys.ru/files/2018-2/409-413.pdf
     pi = 0
-    k = 0
+    k = 0 # счетчик 
     while k < n:
-        pi += (1/(16**k))*(4/(8*k+1)-2/(8*k+4)-1 / (8*k+5)-1/(8*k+6))
-        k += 1
+        pi += (1/(16**k))*(4/(8*k+1)-2/(8*k+4)-1 / (8*k+5)-1/(8*k+6)) # одна из формул вычисления значения пи 
+        k += 1 # добавляем следующую итерацию к
     return pi
 
-d = 5
-print(f'pi = {round(bbp(d), d)}')
+d = 5  # количество знаков после запятой
+print(f'pi = {round(bbp(d), d)}') # сдесь мы делаем округление полученного числа пи
 
 
-# 2 вариант
+
+# 2 вариант ( НЕНУЖНАЯ ЗАМОРОЧКА)
+def CalculatePi(accuracy):
+    myPi = 3
+    temp = 0
+    myAccuracy = 10 ** (-accuracy)
+    i = 2
+    sign = 1
+    while abs(myPi - temp) > myAccuracy:
+        temp = myPi
+        myPi = myPi + sign * 4 / (i * (i +1) * (i + 2))
+        sign = - sign
+        i += 2
+    return round(myPi, accuracy)
+
+try:
+    accuracy = 10
+    if 0 < accuracy <= 10:
+        print (f' Число  pi = {CalculatePi(accuracy)} ')
+    else:
+        print('Значение точности должно быть от 1 до 10')
+except ValueError:
+    print('Введено не число')
+
+
+
+# 3 вариант
 
 import math
 from math import pi
@@ -32,7 +58,7 @@ from math import pi
 n = pi
 print(n)
 
-# Формула Бэйли — Боруэйна — Плаффа
+# 4 вариант  Формула Бэйли — Боруэйна — Плаффа
 
 n = 100
 my_pi = sum(1/16**x*(4/(8*x + 1) -2 /(8*x + 4) -1 /(8*x + 5) -1 /(8*x + 6)) for x in range(n))

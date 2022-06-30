@@ -18,3 +18,4 @@ print(list)
 print()
 list.reverse() # обратный список, перевернуть
 print(list)
+
